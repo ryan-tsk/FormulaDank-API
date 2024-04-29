@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-from .routers import routers
+from routers import formuladank
 
 app = FastAPI()
 
-app.include_router(routers.router)
+app.include_router(formuladank.router, prefix='/formuladank')
 
 @app.get("/")
 def main():
